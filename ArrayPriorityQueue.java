@@ -7,51 +7,22 @@ import java.util.ArrayList;
 
 public class ArrayPriorityQueue implements PriorityQueue{
 
-    private ArrayList _priorityQ;
+    private ArrayList<Ticket> _priorityQ;
 
     public ArrayPriorityQueue(){
-	_priorityQ = new ArrayList();
+	_priorityQ = new ArrayList<Ticket>();
     }
-    //for int queues
-    public void add(int x){
-	_priorityQ.add(x);
-    }
-    //for string queues
-    public void add(String x){//adding towards the rightmost end to preserve O(1) 
+	
+    //for Ticket queues
+    public void add(Ticket x){//adding towards the rightmost end to preserve O(1) 
 	_queue.add(x); 
     }
+	
     public boolean isEmpty(){
 	return _priorityQ.size() == 0;
     }
     
-    public int peekMin(){
-	if(!isEmpty()){
-	    int min = (int)_priorityQ.get(0);
-	
-	    for(int i = 1; i < _priorityQ.size(); i++){
-		if((int)_priorityQ.get(i) < min ){
-		    min = (int)_priorityQ.get(i);
-		}
-	    }
-	    return min;
-	}
-	return -1;
-	
-	
-    }
-
-    public int removeMin(){
-	for(int i = 0; i < _priorityQ.size(); i++){
-	    if((int)_priorityQ.get(i) == peekMin()){
-		int min =(int)_priorityQ.get(i);
-		_priorityQ.remove(i);
-		return min;
-	    }
-	}
-	return -1;
-    }
-
-    public String removeMin(){//remove the member of highest priority: a deque method
+    public Ticket removeMin(){//remove the member of highest priority: a deque method
 	//go through the ArrayList and find the highest number
 	int indexOfLargest = 0; 
 	for(int x = 0; x < _queue.size(); x++){
@@ -62,7 +33,7 @@ public class ArrayPriorityQueue implements PriorityQueue{
 	return _queue.remove(indexOfLargest); 
     }
     
-    public String peekMin(){
+    public Ticket peekMin(){
 	int indexOfLargest = 0; 
 	for(int x = 0; x < _queue.size(); x++){
 	    if(_queue.get(x).compareTo(_queue.get(indexOfLargest)) > 0){
@@ -71,9 +42,9 @@ public class ArrayPriorityQueue implements PriorityQueue{
 	}
 	return _queue.get(indexOfLargest); 	
     }
-    public String toString(){
-	return _priorityQ.toString();
-    }
+    //public String toString(){
+	
+    //}
     
     public static void main(String[] args) {
 	PriorityQueue item = new ArrayPriorityQueue();
