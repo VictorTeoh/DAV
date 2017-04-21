@@ -1,6 +1,6 @@
 public interface PriorityQueue{
-    void add(String x);
+    void add(Ticket x);
     boolean isEmpty();
-    String removeMin();
-    String peekMin();
+    Ticket removeMin();
+    Ticket peekMin();
 }
