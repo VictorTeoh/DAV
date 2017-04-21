@@ -31,6 +31,13 @@ public class HelpDesk{
 
     public static void main(String[] args){
 	HelpDesk a = new HelpDesk(); 
+	Ticket first = new Ticket();
+	Ticket second = new Ticket();
+	Ticket third = new Ticket();
+	a.enQueue(first);
+	a.enQueue(second);
+	a.enQueue(third);
+	System.out.println(_line.peekMin().getPriority());
 	
     }
 
