@@ -1,16 +1,19 @@
 
 public class HelpDesk{
 
-    private ArrayPriorityQueue<Ticket> _line;//collection of tickets to be handled  
-    private ArrayPriorityQueue<Ticket> _archive;//collection of tickets that were handled 
-        
+    private static ArrayPriorityQueue _line;//collection of tickets to be handled  
+    private static ArrayPriorityQueue _archive;//collection of tickets that were handled 
+    private static int _counter; //assigns id to each subsequent ticket
     public HelpDesk(){
-	_line = new ArrayPriorityQueue<Ticket>(); 
-	_archive = new ArrayPriorityQueue<Ticket>();
+	_line = new ArrayPriorityQueue(); 
+	_archive = new ArrayPriorityQueue();
+	_counter = 0;
     }
 
-    public void enQueue(Ticket t){//adds a ticket to the line 
-	_line.add(t); 
+    public void enQueue(Ticket t){//adds a ticket to the line
+	t.setID(_counter);
+	_line.add(t);
+	_counter++;
     }
 
     public Ticket deQueue(){//removes and returns ticket of highest priority
@@ -21,7 +24,7 @@ public class HelpDesk{
 	return _line.peekMin(); 
     }
 
-    public Ticket archiveTicket(Ticket t){//put a ticket into the archive
+    public void archiveTicket(Ticket t){//put a ticket into the archive
 	_archive.add(t); 
     }
 
@@ -37,7 +40,7 @@ public class HelpDesk{
 	a.enQueue(first);
 	a.enQueue(second);
 	a.enQueue(third);
-	System.out.println(_line.peekMin().getPriority());
+       System.out.println(_line.peekMin().getPriority());
 	
     }
 

@@ -1,7 +1,3 @@
-//JAD: Jeffrey Weng, Allard Peng, Dasha Shifrina
-//APCS2 pd3
-//hw32 -- Getting Past the Velvet Rope
-//2017-04-19
 
 import java.util.ArrayList;
 
@@ -26,7 +22,7 @@ public class ArrayPriorityQueue implements PriorityQueue{
 	//go through the ArrayList and find the highest number
 	int indexOfLargest = 0; 
 	for(int x = 0; x < _queue.size(); x++){
-	    if(_queue.get(x).compareTo(_queue.get(indexOfLargest)) > 0){
+	    if(_queue.get(x).compareTo(_queue.get(indexOfLargest)) == 0){
 		indexOfLargest = x;
 	    }
 	}
@@ -36,12 +32,17 @@ public class ArrayPriorityQueue implements PriorityQueue{
     public Ticket peekMin(){
 	int indexOfLargest = 0; 
 	for(int x = 0; x < _queue.size(); x++){
-	    if(_queue.get(x).compareTo(_queue.get(indexOfLargest)) > 0){
+	    if(_queue.get(x).compareTo(_queue.get(indexOfLargest)) == 0){
 		indexOfLargest = x;
 	    }
 	}
 	return _queue.get(indexOfLargest); 	
     }
+
+    public ArrayList<Ticket> getList() {
+	return _queue;
+    }
+    
     //public String toString(){
 	
     //}
