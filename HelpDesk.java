@@ -1,8 +1,10 @@
 
+import java.util.ArrayList;
+
 public class HelpDesk{
 
     private static ArrayPriorityQueue _line;//collection of tickets to be handled  
-    private static ArrayPriorityQueue _archive;//collection of tickets that were handled 
+    private static ArrayList _archive;//collection of tickets that were handled 
     private static int _counter; //assigns id to each subsequent ticket
     public HelpDesk(){
 	_line = new ArrayPriorityQueue(); 
