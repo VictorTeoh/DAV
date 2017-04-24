@@ -5,7 +5,7 @@ public class HelpDesk{
 
     private static ArrayPriorityQueue _line;//collection of tickets to be handled  
     private static ArrayList<Ticket> _archive;//collection of tickets that were handled 
-    private static Ticket _currentTicket; 		
+    private static Ticket _currentTicket; //the current ticket that is being handled		
     private static int _counter; //assigns id to each subsequent ticket
     public HelpDesk(){
 	_line = new ArrayPriorityQueue(); 
