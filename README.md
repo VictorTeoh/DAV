@@ -1,4 +1,4 @@
-# DAV
+# DAV - David Apterman, Allard Peng, Victor Teoh
 
 Our Design: 
 
@@ -10,7 +10,7 @@ Our implementation for a Help Desk used the classes HelpDesk, Ticket, and ArrayP
 - Ticket.java: This class represents the ticket and everything a ticket is. This class just has all the qualities of a ticket as mentioned in class. 
 
 
-- ArrayPriorityQueue.java: The implementation of a Priority Queue using an ArrayList. This is the line that the HelpDesk class refers to. 
+- ArrayPriorityQueue.java: The implementation of a Priority Queue using an ArrayList. This is the _line that the HelpDesk class refers to. 
 
 
 Embellishments: 
