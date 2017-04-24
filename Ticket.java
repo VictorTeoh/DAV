@@ -1,3 +1,4 @@
+
 import cs1.Keyboard;
 
 public class Ticket implements Comparable {
@@ -18,6 +19,8 @@ public class Ticket implements Comparable {
 
     System.out.println("Now please give us your status. If you are a CEO, enter 0. If you are a manager, enter 1. If you are a general employee, enter 2. Otherwise, enter 3.");
     priority=Integer.parseInt( Keyboard.readString() );
+
+    status = 1; //status of problem is gonna be 1 as a default, change to 0 when it is resolved 
     }
     //ACCESSORS//
     public String getName() {
@@ -65,9 +68,6 @@ public class Ticket implements Comparable {
 	}
 	return 0;
     }
-
-
-
 
      public static void main(String args[])
      {
